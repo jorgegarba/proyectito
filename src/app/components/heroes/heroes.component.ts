@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, DoCheck} from '@angular/core';
 import { Hero } from '../../models/Hero';
-import { HEROES } from '../../seeders/seederHeroes';
+import { HeroService } from '../../services/hero.service';
 
 @Component({
   selector: 'app-heroes',
@@ -12,14 +12,18 @@ export class HeroesComponent implements OnInit, OnDestroy, DoCheck{
   public heroes:Array<Hero> = [];
   public selectedHero:Hero;
 
-  constructor(){
+  constructor(private _sHeroService:HeroService){
     console.log("Constructor de HeroesComponent");
   }
   
   ngOnInit(){
     console.log("ngOnInit: de HeroesComponent");
-    this.heroes = HEROES;
-    console.log(this.heroes);
+
+    this._sHeroService.getHeores().then((heroes)=>{
+      this.heroes = heroes;
+    }).catch((error)=>{
+      this.heroes = [];
+    });
   }
 
   onSelect(hero:Hero):void{

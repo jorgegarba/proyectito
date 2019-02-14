@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'HEROES APPLICATION';
+  public title = 'HEROES APPLICATION';
+  public switch:boolean;
+
+  constructor(){
+    this.switch = true;
+  }
+
+  toogle(){
+    if(this.switch){
+      this.switch = false;
+    }else{
+      this.switch = true;
+    }
+  }
+
 }

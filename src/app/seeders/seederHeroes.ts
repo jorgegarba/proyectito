@@ -5,5 +5,6 @@ export const HEROES:Array<Hero> = [
     { id:2, name:"BatMan" },
     { id:3, name:"Robin" },
     { id:4, name:"Gokú" },
-    { id:5, name:"Domingo P." }
+    { id:5, name:"Domingo P." },
+    { id:6, name:"Carhuancho"}
 ];
