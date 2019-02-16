@@ -21,7 +21,7 @@ export class HeroService {
         let hora = new Date();
         this._sMessage.add("Fetched HEROES" + hora);
         resolve(HEROES);
-      },2000);
+      },1000);
 
     });
 

@@ -6,6 +6,8 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ErrorComponent } from './components/error/error.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    ErrorComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
