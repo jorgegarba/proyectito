@@ -1,0 +1,9 @@
+{{_sMessage.messages.length}}
+
+
+<div *ngFor = "let m of _sMessage.messages">
+  {{m}}
+</div>
+
+
+<button (click)="_sMessage.clear()">BORRAR LOG</button>
