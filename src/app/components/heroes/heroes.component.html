@@ -1,17 +1,8 @@
 <h2>Lista de Heroes</h2>
 <ul class="heroes">
-    <li *ngFor="let heroe of heroes" (click)="onSelect(heroe)" [class.selected]="selectedHero===heroe">
-        <span class="badge">{{heroe.id}} </span>{{heroe.name}}
+    <li *ngFor="let heroe of heroes">
+        <a routerLink="/detail/{{heroe.id}}">
+            <span class="badge">{{heroe.id}} </span>{{heroe.name}}
+        </a> 
     </li>
 </ul>
-
-<hr>
-
-<div *ngIf="selectedHero">
-    <h2>Detalles de: {{selectedHero.name}}</h2>
-    <div><span>id: </span> {{selectedHero.id}}</div>
-</div>
-
-<hr>
-<h4>A continuación... hero-detail</h4>
-<app-hero-detail [heroInput]="selectedHero">loading...</app-hero-detail>

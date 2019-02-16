@@ -16,7 +16,7 @@ export class HeroService {
   getHeores():Promise<any>{
     
     return new Promise((resolve,reject)=>{
-      
+    
       setTimeout(()=>{
         let hora = new Date();
         this._sMessage.add("Fetched HEROES" + hora);
@@ -25,6 +25,19 @@ export class HeroService {
 
     });
 
+  }
+
+  getHeroById(id:number):Promise<any>{
+    return new Promise((resolve,reject)=>{
+
+      for(let i = 0; i<HEROES.length;i++){
+        if(HEROES[i].id === id){
+          resolve(HEROES[i]);
+        }
+      }
+
+      reject("ERROR - HEROE NO ENCONTRADO");
+    });
   }
 
 }

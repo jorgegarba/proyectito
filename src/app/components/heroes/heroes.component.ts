@@ -10,7 +10,7 @@ import { HeroService } from '../../services/hero.service';
 export class HeroesComponent implements OnInit, OnDestroy, DoCheck{
   
   public heroes:Array<Hero> = [];
-  public selectedHero:Hero;
+  
 
   constructor(private _sHeroService:HeroService){
     console.log("Constructor de HeroesComponent");
@@ -24,10 +24,6 @@ export class HeroesComponent implements OnInit, OnDestroy, DoCheck{
     }).catch((error)=>{
       this.heroes = [];
     });
-  }
-
-  onSelect(hero:Hero):void{
-    this.selectedHero = hero;
   }
 
   ngOnDestroy(){
