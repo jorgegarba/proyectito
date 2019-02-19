@@ -9,6 +9,8 @@ import { MessageService } from './message.service';
 })
 export class HeroService {
 
+  HeroesCopia:Array<Hero>  = HEROES;
+
   constructor(private _sMessage:MessageService) {
 
   }
@@ -38,6 +40,21 @@ export class HeroService {
 
       reject("ERROR - HEROE NO ENCONTRADO");
     });
+  }
+
+  deleteHeroById(id:number):Promise<any>{
+    
+    return new Promise((resolve,reject)=>{
+      
+      //filter retorna todas las ocurrencias que cumplan la condición
+      this.HeroesCopia = this.HeroesCopia.filter((heroe)=>{
+        return heroe.id !== id;
+      });
+
+      resolve(this.HeroesCopia);
+
+    });
+
   }
 
 }

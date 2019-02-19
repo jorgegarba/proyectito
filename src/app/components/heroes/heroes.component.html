@@ -3,6 +3,8 @@
     <li *ngFor="let heroe of heroes">
         <a routerLink="/detail/{{heroe.id}}">
             <span class="badge">{{heroe.id}} </span>{{heroe.name}}
-        </a> 
+        </a>
+        |
+        <button (click)="eliminar(heroe)">Eliminar</button>
     </li>
 </ul>

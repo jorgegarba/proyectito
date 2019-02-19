@@ -34,5 +34,14 @@ export class HeroesComponent implements OnInit, OnDestroy, DoCheck{
     console.log("ngDoCheck: de HeroesComponent");
   }
 
+
+  eliminar(heroe:Hero){
+    this._sHeroService.deleteHeroById(heroe.id).then((response:Hero[])=>{
+      this.heroes = response;
+    }).catch(()=>{
+      console.log("Hubo un error");
+    })
+  }
+
 }
   
